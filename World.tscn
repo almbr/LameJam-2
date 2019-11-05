@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://scripts/antenna.gd" type="Script" id=1]
+[ext_resource path="res://icon.png" type="Texture" id=2]
+
+[node name="World" type="Node2D"]
+
+[node name="antenna" type="KinematicBody2D" parent="."]
+position = Vector2( 529.196, 300.886 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+shoot_delta = 1
+
+[node name="Sprite" type="Sprite" parent="antenna"]
+texture = ExtResource( 2 )
