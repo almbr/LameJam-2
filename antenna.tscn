@@ -1,0 +1,27 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://scripts/antenna.gd" type="Script" id=1]
+[ext_resource path="res://images/antenn.png" type="Texture" id=2]
+
+[node name="antenna" type="KinematicBody2D" groups=[
+"antenna",
+]]
+position = Vector2( 538.552, 402.159 )
+scale = Vector2( 1, 1.01734 )
+collision_mask = 2
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+shoot_delta = 1
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( -1.84155, 0 )
+scale = Vector2( 0.146722, 0.15319 )
+texture = ExtResource( 2 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PoolVector2Array( 0.341553, 16.1378, 33.3104, 8.76471, 50.7878, -9.86227, 3.51923, -44.0117, -52.8852, -14.519, -32.23, 5.66019 )
+
+[node name="FirePoint" type="Node2D" parent="."]
+position = Vector2( 3.59241, -59.079 )

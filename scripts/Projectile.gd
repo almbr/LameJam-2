@@ -11,7 +11,7 @@ func init(velocity):
 	vel = velocity
 	
 func _process(_delta):
-	vel = move_and_slide(vel, UP)
+	position += vel
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):

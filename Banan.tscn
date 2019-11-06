@@ -4,6 +4,7 @@
 [ext_resource path="res://images/banan.png" type="Texture" id=2]
 
 [node name="Banan" type="KinematicBody2D"]
+collision_layer = 2
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_group_": true
@@ -12,3 +13,6 @@ __meta__ = {
 [node name="Sprite" type="Sprite" parent="."]
 scale = Vector2( 0.09, 0.089532 )
 texture = ExtResource( 2 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PoolVector2Array( -11.1021, -19.9397, -8.2183, -11.4873, -1.35692, -4.42706, 16.9401, 0.0477524, 22.3099, -3.03489, 33.3477, -15.266, 35.9332, -12.6806, 26.7847, 8.10241, 16.244, 9.39514, -7.22389, 2.53376, -15.1791, -20.8347, -11.997, -22.2269 )

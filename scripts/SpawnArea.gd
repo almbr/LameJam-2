@@ -1,8 +1,6 @@
 extends Area2D
 
 # This area spawns bananas
-#var Shape = get_node("Shape")
-#var centerpos = colshape2d.position + area2d.position
 var centerpos
 var size = Vector2()
 var positionInArea = Vector2()
@@ -15,10 +13,6 @@ func _ready():
 	size = $Shape.shape.extents
 	print("Centerpos: ", centerpos)
 	print("Size: ", size)
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
 
 # Spawn banana
 func _on_Spawntimer_timeout():
