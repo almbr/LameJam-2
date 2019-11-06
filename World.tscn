@@ -4,9 +4,13 @@
 [ext_resource path="res://icon.png" type="Texture" id=2]
 
 [node name="World" type="Node2D"]
+scale = Vector2( 1, 1.00614 )
 
-[node name="antenna" type="KinematicBody2D" parent="."]
+[node name="antenna" type="KinematicBody2D" parent="." groups=[
+"antenna",
+]]
 position = Vector2( 529.196, 300.886 )
+scale = Vector2( 1, 1.01734 )
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_group_": true

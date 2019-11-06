@@ -6,10 +6,15 @@ extends KinematicBody2D
 var mouse_pos = Vector2()
 var shoot_counter : float = 0 
 export var shoot_delta = 3
+export var shoot_frequency : float = 1 
+export var projectile_speed = 1
+
+# Projectile object scene
+var projectile = preload("res://Projectile.tscn")
 
 # Called when the node enters the scene tree for the first time.
 #func _ready():
-#	pass # Replace with function body.
+#	antenna = get_tree().get_nodes_in_group("antenna")[0]
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -19,8 +24,8 @@ func _process(delta):
 		shoot()
 		# Reset
 		shoot_counter = 0
-	elif shoot_counter < 3:
-		shoot_counter += delta
+	elif shoot_counter < shoot_delta:
+		shoot_counter += shoot_frequency/10
 		
 # Called upon input event
 func _input(event):
@@ -35,4 +40,13 @@ func _input(event):
 # Shoots a projectile in the current angle
 func shoot():
 	print("Shoot")
+	# Set projectile velocity to speed of projectile_speed and angle of antenna
+	var antenna_rotation = self.get_rotation() - 3*PI/4
+	var projectile_velocity = Vector2(projectile_speed, projectile_speed).rotated(antenna_rotation) 
+	
+	# Create projectile and add as child to root
+	var p = projectile.instance()
+	p.set_position(self.get_position())
+	p.init(projectile_velocity)
+	get_tree().get_root().add_child(p)
 	pass
