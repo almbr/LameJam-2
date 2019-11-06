@@ -1,12 +1,13 @@
 [gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://scripts/Projectile.gd" type="Script" id=1]
-[ext_resource path="res://icon.png" type="Texture" id=2]
+[ext_resource path="res://images/wave.png" type="Texture" id=2]
 
 [node name="Projectile" type="KinematicBody2D" groups=[
 "projectile",
 ]]
-scale = Vector2( 0.97732, 0.989031 )
+position = Vector2( -0.0694427, -0.568802 )
+scale = Vector2( 0.2, 0.3 )
 collision_mask = 2
 script = ExtResource( 1 )
 __meta__ = {
@@ -14,8 +15,11 @@ __meta__ = {
 }
 
 [node name="Sprite" type="Sprite" parent="."]
-scale = Vector2( 0.513232, 0.513232 )
+position = Vector2( 2.90997, 7.15565 )
+scale = Vector2( 0.361912, 0.361912 )
 texture = ExtResource( 2 )
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
-polygon = PoolVector2Array( -16.1766, 15.1043, -15.8367, -15.6261, 15.7717, -15.1223, 15.7717, 16.2798 )
+position = Vector2( 1.0018, -0.280468 )
+scale = Vector2( 1.01067, 1 )
+polygon = PoolVector2Array( -64.2233, 30.6134, -75.5764, 20.2361, -40.6657, -5.84721, -12.5669, -11.737, 35.116, -10.3347, 60.6604, 5.09097, 74.0003, 25.565, 62.6472, 30.0525, 33.1292, 4.8105, -19.9464, 2.84724, -43.2202, 11.8222 )

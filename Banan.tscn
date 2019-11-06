@@ -3,7 +3,9 @@
 [ext_resource path="res://scripts/Banan.gd" type="Script" id=1]
 [ext_resource path="res://images/banan.png" type="Texture" id=2]
 
-[node name="Banan" type="KinematicBody2D"]
+[node name="Banan" type="KinematicBody2D" groups=[
+"banan",
+]]
 collision_layer = 2
 script = ExtResource( 1 )
 __meta__ = {

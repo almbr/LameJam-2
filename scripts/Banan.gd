@@ -1,13 +1,16 @@
 extends KinematicBody2D
 
 export var speed = 1
+export var damage = 1
 
 var target
 var collision_info
+var healthnode
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	target = get_target()
+	healthnode = get_tree().get_nodes_in_group("health")[0]
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(_delta):
@@ -21,8 +24,10 @@ func _physics_process(_delta):
 		if collision_info.get_collider().is_in_group("projectile"):
 			die()
 			
+		# If hit antenna	
 		elif collision_info.get_collider().is_in_group("antenna"):
-			print("Collided with antenna")
+			healthnode.take_damage(damage)
+			die()
 
 # Moves towards a position. To be called from _process. Should be randomized later.
 func move_towards(position):

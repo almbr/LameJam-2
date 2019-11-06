@@ -6,7 +6,7 @@
 [node name="antenna" type="KinematicBody2D" groups=[
 "antenna",
 ]]
-position = Vector2( 538.552, 402.159 )
+position = Vector2( 540.348, 399.165 )
 scale = Vector2( 1, 1.01734 )
 collision_mask = 2
 script = ExtResource( 1 )
