@@ -7,7 +7,7 @@ var mouse_pos = Vector2()
 var shoot_counter : float = 0 
 export var shoot_delta = 3
 export var shoot_frequency : float = 1 
-export var projectile_speed = 1
+export var projectile_speed = 100
 
 # Projectile object scene
 var projectile = preload("res://Projectile.tscn")
@@ -17,7 +17,7 @@ var projectile = preload("res://Projectile.tscn")
 #	antenna = get_tree().get_nodes_in_group("antenna")[0]
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _process(_delta):
 	# Every shoot_delta:nth delta a projectile is fired
 	if shoot_counter >= shoot_delta && Input.is_mouse_button_pressed(BUTTON_LEFT):
 		# Perform action
@@ -49,4 +49,3 @@ func shoot():
 	p.set_position(self.get_position())
 	p.init(projectile_velocity)
 	get_tree().get_root().add_child(p)
-	pass
